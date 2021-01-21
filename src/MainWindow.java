@@ -16,15 +16,10 @@ public class MainWindow extends JFrame {
     MainWindow() {
         initFrameWindow();
         initBottomPanel();
-        //initGameMap();
+        initGameMap();
     }
 
     void startGame(int gameMode, int fieldSize, int winLength) {
-        if (gameMap != null){
-            remove(gameMap);
-        }
-        gameMap = new GameMap();
-        add(gameMap);
         gameMap.startNewGame(gameMode, fieldSize, winLength);
     }
 
@@ -43,7 +38,7 @@ public class MainWindow extends JFrame {
 
     private void initGameMap() {
         gameMap = new GameMap();
-        add(gameMap, BorderLayout.CENTER);
+        add(gameMap);
     }
 
     private void initBottomPanel() {
